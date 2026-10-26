@@ -29,11 +29,13 @@ class DashboardFragment : Fragment() {
         binding.tenantCountTextView.text = "Tenants\n${TenantRepository.tenants.size}"
 
         binding.addTenantButton.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment_to_addTenantFragment)
+            val action = DashboardFragmentDirections.actionDashboardFragmentToAddTenantFragment()
+            findNavController().navigate(action)
         }
 
         binding.viewTenantsButton.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment_to_viewTenantsFragment)
+            val action = DashboardFragmentDirections.actionDashboardFragmentToViewTenantsFragment()
+            findNavController().navigate(action)
         }
     }
 
